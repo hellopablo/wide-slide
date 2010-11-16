@@ -1,0 +1,38 @@
+/*	Slider basics	*/
+#wide_slider,
+#wide_slider_2 {
+	background:	#000;
+	width:		100%;
+	height:		350px;
+	position:	relative;
+	background:	#000 url(../images/loading_whiteonblack.gif) center no-repeat;
+	z-index:	0;
+	overflow:	hidden;
+}
+.wideSlide {
+	height:		100%;
+	width:		100%;
+	position:	absolute;
+	top:		0px;
+	left:		0px;
+	color:		#fff;
+	display:	none;
+	background:	#000;
+}
+.wideSlideNotice {
+	z-index:	3;
+	position:	absolute;
+	width:		34px;
+	height:		40px;
+	top:		50%;
+	left:		50%;
+	margin-top:	-20px;
+	margin-left:-17px;
+	display:none;
+}
+.wideSlidePause {
+	background:	url(../images/pause.png) no-repeat center;
+}
+.wideSlidePlay {
+	background:	url(../images/play.png) no-repeat center;
+}
