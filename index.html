@@ -3,25 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		
-		<title>jQuery Plugin: WideSlide</title>
+		<title>WideSlide: HTML slideshows for jQuery</title>
 		
 		<!--	META TAGS	-->
-
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="author"				content="Pablo de la Pe&ntilde;a" />
+		<meta name="robots"				content="index, follow" />
+		<meta name="GOOGLEBOT"			content="index, follow" />
+		<meta name="keywords"			content="" />
+		<meta name="description"		content="" />
 		
 		<!--	STYLE[S]	-->
-		<link type="text/css" rel="stylesheet" media="screen" href="css/wideslide.css" />
-		<link type="text/css" rel="stylesheet" media="screen" href="css/slides.css" />
+		<!--[if IE]> <style type="text/css">@import "css/ieoverride.css";</style> <![endif]-->
 		
 		<!-- JAVASCRIPT[S] -->
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/jQuery.wide.slide.1.0.js"></script>
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+			google.load("jquery", "1.4.2");
+		</script>
+		<script type="text/javascript" src="assets/js/jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.wide.slide.pack.js"></script>
 		<script type="text/javascript">
 		<!--// Hide from old browsers
 			
 			$(function() {
 				
-				$("#wide_slider").wideSlide();
-				$("#wide_slider_2").wideSlide({pauseTime:7500});
+				$("#wide_slider").wideSlide({pauseOnHover: true});
+				
+				$("a[href=#installation_useage]").click(function() {
+					$.scrollTo('#installation_useage', 500);
+					return false;
+				});
+				$("a[href=#options]").click(function() {
+					$.scrollTo('#options', 500);
+					return false;
+				});
+				$("a[href=#download]").click(function() {
+					$.scrollTo('#download', 500);
+					return false;
+				});
+				$("a[href=#browser]").click(function() {
+					$.scrollTo('#browser', 500);
+					return false;
+				});
+				$("a[href=#development]").click(function() {
+					$.scrollTo('#development', 500);
+					return false;
+				});
+				$("a[href=#changes]").click(function() {
+					$.scrollTo('#changes', 500);
+					return false;
+				});
+				$("a[href=#main_body]").click(function() {
+					$.scrollTo('#main_body', 500);
+					return false;
+				});
 				
 			});
 			
@@ -30,16 +66,53 @@
 		
 		<style type="text/css">
 			
-
+			/*	Slider basics	*/
+			#wide_slider {
+				background:	#000;
+				width:		100%;
+				height:		350px;
+				position:	relative;
+				background:	#000 url(assets/img/loading_whiteonblack.gif) center no-repeat;
+				z-index:	0;
+				overflow:	hidden;
+			}
+			.wideSlide {
+				height:		100%;
+				width:		100%;
+				position:	absolute;
+				top:		0px;
+				left:		0px;
+				color:		#fff;
+				display:	none;
+				background:	#000;
+			}
+			.wideSlideNotice {
+				z-index:	3;
+				position:	absolute;
+				width:		34px;
+				height:		40px;
+				top:		50%;
+				left:		50%;
+				margin-top:	-20px;
+				margin-left:-17px;
+				display:none;
+			}
+			.wideSlidePause {
+				background:	url(assets/img/pause.png) no-repeat center;
+			}
+			.wideSlidePlay {
+				background:	url(assets/img/play.png) no-repeat center;
+			}
 		
 			
 			/*	Custom CSS for the panels and this demo	*/
 			body {
-				background: url(images/hardwoodfloor.jpg);
+				background: url(assets/img/hardwoodfloor.jpg) fixed;
 				margin:0px;
 				padding:0px;
+				font-family:"Helvetica", "Arial", sans-serif;
 				line-height:1.5em;
-				font-family: Helvetica, Arial, sans-serif;
+				font-size:14px;
 			}
 			#wide_slider {
 				margin-top:11px;
@@ -64,10 +137,11 @@
 			#main_body {
 				margin:auto;
 				padding:10px;
-				background:url(images/trans_50.png);
+				background:url(assets/img/trans_50.png);
 				border-top:1px solid #000;
 				border-bottom:1px solid #000;
 				width:750px;
+				padding-bottom:7fire0px;
 			}
 			
 			h2 {
@@ -89,6 +163,37 @@
 				color:#222;
 			}
 			
+			pre {
+				background:url(assets/img/trans_30.png);
+				border:1px solid #444;
+				font-family:monaco;
+				padding:5px;
+				width:737px;
+				display:block;
+			}
+			
+			pre span {
+				color:#666;
+			}
+			
+			ul {
+				list-style:none;
+				margin:0px;
+				padding:0px;
+			}
+			
+			#slide_1 {
+				width:100%;
+				height:100%;
+				background: url(assets/img/wide_1.jpg) center top no-repeat;
+			}
+			#slide_2 {
+				width:100%;
+				height:100%;
+				background: url(assets/img/wide_2.jpg) center top no-repeat;
+			}
+			
+			
 			#copyright {
 				margin-top:25px;
 				margin-bottom:50px;
@@ -98,9 +203,72 @@
 			#copyright a {
 				color:#111;
 			}
+			
+			
+			
+				/*
+				
+				    Super Awesome Buttons
+				    http://www.zurb.com/playground/super-awesome-buttons
+				
+				 */
+				 
+				 
+				/* Awesomeness ---- */
+				.awesome,
+				.awesome:visited {
+					background: #222 url(assets/img/alert-overlay.png) repeat-x;
+					display: inline-block;
+					padding: 5px 10px 6px;
+					color: #fff;
+					text-decoration: none;
+					-moz-border-radius: 5px;
+					-webkit-border-radius: 5px;
+					-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+					-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+					text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+					border-bottom: 1px solid rgba(0,0,0,0.25);
+					position: relative;
+					cursor: pointer;
+				}
+				.awesome:hover {
+					background-color: #111;
+					color: #fff;
+				}
+				.awesome:active {
+					top: 1px;
+				}
+				
+				
+				/* Sizes ---------- */
+				.awesome,
+				.awesome:visited,
+				.medium.awesome,
+				.medium.awesome:visited {
+					font-size: 13px;
+					font-weight: 700;
+					line-height: 1;
+					text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+				}
+				testicles {
+					color: #9dc8ff;
+				}
 		
 		</style>
+		<script type="text/javascript">
+			
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-21238338-1']);
+			_gaq.push(['_setDomainName', '.hellopablo.co.uk']);
+			_gaq.push(['_trackPageview']);
+			
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
 		
+		</script>
 	</head>
 	<body>
 
@@ -109,10 +277,23 @@
 		<div id="wide_slider">
 			<div><!-- Start of panel; do not give this an ID -->
 				<div id="slide_1">
+					
+					<div style="padding-top:5px;">
+					<p style="font-weight:bold;font-size:20px;text-align:center;background:url(assets/img/trans_30.png);padding:3px;color:#000;">
+						HTML slideshows for jQuery.
+					</p>
+					<p style="font-weight:bold;font-size:20px;text-align:center;margin-top:20px;">
+						<a href="#main_body" class="awesome">Click to find out more</a>
+					</p>
+					</div>
+				
 				</div>
 			</div><!-- End of panel -->
 			<div><!-- Start of panel; do not give this an ID -->
 				<div id="slide_2">
+					<p style="text-align:center;padding-top:250px;font-size:20px;">
+						The contents of this slide can be completely customised using CSS and degrades nicely when styles are turned off.
+					</p>
 				</div>
 			</div><!-- End of panel -->
 		</div>
@@ -128,30 +309,155 @@
 			
 			<div id="main_body">
 			
+				<div style="text-align:center;border-bottom:1px dashed;padding-bottom:20px;padding-top:10px;">
+				<ul>
+					<li style="display:inline;padding-right:15px;"><a href="#installation_useage" class="awesome">Installation &amp; Usage</a></li>
+					<li style="display:inline;padding-right:15px;"><a href="#options" class="awesome">Options</a></li>
+					<li style="display:inline;padding-right:15px;"><a href="#download" class="awesome">Download</a></li>
+					<li style="display:inline;padding-right:15px;"><a href="#browser" class="awesome">Browser Compatability</a></li>
+					<li style="display:inline;padding-right:15px;"><a href="#development" class="awesome">Development</a></li>
+					<li style="display:inline;"><a href="#changes" class="awesome">Change Log</a></li>
+				</ul>
+				</div>
+			
 				<p>
-					WideSlide displays uses HTML divs as the source for each slide. Just put your content in it's own div within the slider
-					markup and apply the plugin to it. It's really, dead easy.
+					Sliders are great, aren't they? What better way to showcase your best work or featured news than putting them on a loop and fading them nicely between each other. Sexy.
+				</p>
+				<p>
+					Recently, however, I had a need to transition between not only images, but HTML content as well. I had a good search around for a tutorial or jQuery plugin to accomplish
+					this but didn't find anything. And so <strong>WideSlide</strong> was born.
+				</p>
+				<p>
+					<strong>WideSlide</strong> is a slider designed to scale with the browser window. A traditional slider is defined by the size of the images and has no inherently customisable
+					content (like text) - I needed something which was capable of showing not only super wide images (without scrollbars) but within which I could put <em>any</em> (exception is Flash,
+					Flash doesn't behave well with transitions. Bad Adobe.) HTML and have it display on a loop.
+				</p>
+				<p>
+					This demo shows <strong>WideSlide</strong> in a full width context but with a quick modification of the CSS the slider can be any size you want. It can also run multiple instances
+					on the page for those times when bigger is better.
 				</p>
 			
-				<h2>A second slider?</h2>
+				<a name="installation_useage"></a>
+				<h2 id="installation_useage">Installation &amp; Usage<span><a href="#download">Jump to download ↓</a></span></h2>
 				
 				<p>
-					It's even possible to have a second slider running simultaneously and with different settings.
+					Installing and using this plugin is super simple; simply include the plugin JavaScript and CSS files and with single line of code your
+					markup will be transformed into a beautiful slider of goodness. 
+				</p>
+
+<pre>
+&lt;link type="text/css" rel="stylesheet" media="screen" href="wideslide.css" /&gt;
+
+&lt;script type="text/javascript" src="jquery.wide.slide.pack.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+
+    $(function() {
+        $("#wide_slider").wideSlide();
+    });
+    
+&lt;/script&gt;
+</pre>
+
+				<p>
+					Your HTML markup should be in the following format:
 				</p>
 				
-				<!--	Start WideSlider	-->
-				<div id="wide_slider_2">
-					<div><!-- Start of panel; do not give this an ID -->
-						<div id="slide_3">
-						</div>
-					</div><!-- End of panel -->
-					<div><!-- Start of panel; do not give this an ID -->
-						<div id="slide_4">
-						</div>
-					</div><!-- End of panel -->
-				</div>
-				<!--	End WideSlider	-->
+<pre>
+&lt;div id="wide_slider"&gt;
 
+    &lt;div&gt;&lt;!-- Start of slide; do not give this an ID --&gt;
+        &lt;div id="slide_1"&gt;
+            &lt;!-- Slide content goes in here --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;!-- End of slide --&gt;
+    
+    &lt;div&gt;&lt;!-- Start of slide; do not give this an ID --&gt;
+        &lt;div id="slide_2"&gt;
+            &lt;!-- Slide content goes in here --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;!-- End of slide --&gt;
+    
+&lt;/div&gt;
+</pre>
+				
+				<a name="options"></a>
+				<h2 id="options">Options<span><a href="#download">Jump to download ↓</a></span></h2>
+				
+				<p>
+					There are a number of options available to the plugin; below is the plugin implementation shown with all available options and their defaults:
+				</p>
+
+<pre>
+$(function() {
+    $("#wide_slider").wideSlide(
+      {
+         <span>// <em>The length of time a slide is shown on screen in milliseconds</em></span>
+         pauseTime: 5000,
+         <span>// <em>Boolean as to whether the slider pauses when the mouse is over the slide area</em></span>
+         pauseOnHover: true,   
+         <span>// <em>The transition effect; can be 'fade', 'slideDown' or 'random'</em></span>
+         effect: 'fade',      
+         <span>// <em>The duration of the transition; can be 'slow', 'fast' or in milliseconds</em></span>
+         transitionSpeed: 600  
+      }
+     );
+});
+</pre>
+				
+				<a name="download"></a>
+				<h2 id="download">Download</h2>
+				
+				<div style="float:left;width:100px;height:100px;text-align:Center;">
+					<a href="wideslide.1.0.zip">
+						<img src="assets/img/box_download.png" alt="Download WideSlide v1.0" border="0"/>
+					</a>
+				</div>
+				<p style="float:left;width:638px;margin-left:10px;margin-top:0px;">
+					<strong>Version:</strong> 1.0<br />
+					<strong>Size:</strong> 3Kb (packed) / 4Kb (unpacked)<br />
+					<strong>Requires:</strong> jQuery 1.4+<br />
+					<strong>Release Date:</strong> 16th Nov 2010
+					
+				</p>
+				<div style="clear:both;"></div>
+				
+				
+				<a name="browser"></a>
+				<h2 id="browser">Browser Compatability<span><a href="#download">Jump to download ↑</a></span></h2>
+				
+				<p>
+					WideSlide has been tested on and is compatible with the following browsers (other browsers and versions may be compatible but have not been tested,
+					if it works for you <a href="mailto:pablo@hellopablo.co.uk">let me know</a> and I can update this list):
+				</p>
+				<ul>
+					<li>&rsaquo; <strong>Safari (Mac / PC) v5+</strong></li>
+					<li>&rsaquo; <strong>Chrome (Mac / PC) v7+</strong></li>
+					<li>&rsaquo; <strong>Firefox (Mac / PC) v3.6+</strong></li>
+					<li>&rsaquo; <strong>Internet Explorer (PC) v6+</strong></li>
+				</ul>
+				
+				<a name="development"></a>
+				<h2 id="development">Development<span><a href="#download">Jump to download ↑</a></span></h2>
+				
+				<p>
+					This plugin is simple and was developed for my own purposes, as a result it lacks a lot of functionality that may be expected in
+					such a plugin. I don't have the time to develop it any further than was necessary for my project. However, I actively encourage the plugin's
+					development if anybody wants to do so.
+				</p>
+				<p>
+					So, with that in mind, feel free to <a href="https://github.com/hellopablo/wide-slide">fork away on GitHub</a> and <a href="mailto:pablo@hellopablo.co.uk">let me know</a> if you want your
+					changes merged into the master.
+				</p>
+				<p>
+					Also, please <a href="mailto:pablo@hellopablo.co.uk">get in touch</a> in you use the plugin - I'd love to see how it's being used in the wild.
+				</p>
+				
+				
+				<a name="changes"></a>
+				<h2 id="changes">Change Log</h2>
+				<ul>
+					<li>&rsaquo; <strong>1.0</strong> - 16th November 2010 - <em>Initital version released</em></li>
+				</ul>
 			
 			</div>
 			
