@@ -5,7 +5,7 @@
 	width:		100%;
 	height:		350px;
 	position:	relative;
-	background:	#000 url(../images/loading_whiteonblack.gif) center no-repeat;
+	background:	#000 url(img/loading.gif) center no-repeat;
 	z-index:	0;
 	overflow:	hidden;
 }
@@ -31,8 +31,8 @@
 	display:none;
 }
 .wideSlidePause {
-	background:	url(../images/pause.png) no-repeat center;
+	background:	url(img/pause.png) no-repeat center;
 }
 .wideSlidePlay {
-	background:	url(../images/play.png) no-repeat center;
+	background:	url(img/play.png) no-repeat center;
 }
