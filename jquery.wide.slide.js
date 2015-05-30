@@ -3,7 +3,7 @@
  * Version:       1.0.0
  * Dated:         16th November 2010
  * Dependency:    jQuery 1.2.6
- * Documentation: http://hellopablo.github.io/wideslide/
+ * Documentation: http://hellopablo.github.io/wide-slide/
  * License:       MIT
  **/
 

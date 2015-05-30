@@ -3,7 +3,7 @@
  * Version:       1.0.0
  * Dated:         16th November 2010
  * Dependency:    jQuery 1.2.6
- * Documentation: http://hellopablo.github.io/wideslide/
+ * Documentation: http://hellopablo.github.io/wide-slide/
  * License:       MIT
  **/
 (function($){$.fn.wideSlide=function(options){var settings=$.extend({},$.fn.wideSlide.defaults,options);return this.each(function(){var vars={currentSlide:-1,totalSlides:0,kids:Array(),paused:false,started:false};var slider=$(this);var kids=slider.children("div");kids.each(function(){var child=$(this);child.attr('id','wideSlide_'+vars.totalSlides);child.addClass('wideSlide');vars.kids[vars.totalSlides]=child;vars.totalSlides++;});if(settings.pauseOnHover){slider.hover(function(){if(vars.started==false)
